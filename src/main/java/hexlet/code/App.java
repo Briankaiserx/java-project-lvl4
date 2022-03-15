@@ -42,10 +42,12 @@ public class App {
 
     private static void addRoutes(Javalin app) {
         app.get("/", RootController.welcome);
-        app.routes(() -> { path("urls", () -> {
+        app.routes(() -> {
+            path("urls", () -> {
                 get(UrlController.listURLs);
                 post(UrlController.createUrl);
-                path("{id}", () -> { get(UrlController.showUrl);
+                path("{id}", () -> {
+                    get(UrlController.showUrl);
                     post("/checks", UrlController.checkUrl);
                 });
             });
