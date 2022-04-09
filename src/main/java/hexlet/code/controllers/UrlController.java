@@ -1,5 +1,6 @@
 package hexlet.code.controllers;
 
+import hexlet.code.App;
 import hexlet.code.domain.Url;
 import hexlet.code.domain.UrlCheck;
 import io.ebean.PagedList;
@@ -9,6 +10,7 @@ import io.javalin.http.NotFoundResponse;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -19,6 +21,7 @@ import kong.unirest.Unirest;
 import kong.unirest.UnirestException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 
 public class UrlController {
@@ -116,18 +119,13 @@ public class UrlController {
 
             String title = body.title();
 
-            String description = null;
+            String description = Optional.ofNullable(body.selectFirst("meta[name=description][content]"))
+                    .map(value -> value.attr("content"))
+                    .orElse("");
 
-            if (body.selectFirst("meta[name=description]") != null) {
-                description = body.selectFirst("meta[name=description]").attr("content");
-            }
-
-            String h1 = null;
-
-            if (body.selectFirst("h1") != null) {
-                h1 = body.selectFirst("h1").text();
-            }
-
+            String h1 = Optional.ofNullable(body.selectFirst("h1"))
+                    .map(value -> value.text())
+                    .orElse("");
 
             UrlCheck urlCheck = new UrlCheck(statusCode, title, h1, description, url);
             urlCheck.save();

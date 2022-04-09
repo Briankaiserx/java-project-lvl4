@@ -5,3 +5,9 @@
 [![Actions Status Main](https://github.com/Briankaiserx/java-project-lvl4/actions/workflows/main.yml/badge.svg)](https://github.com/Briankaiserx/java-project-lvl4/actions/workflows/main.yml/badge.svg)
 ####
 https://hexlet-exercice-java4.herokuapp.com/
+
+####
+About aplication
+To clone application ".git clone".
+Local host "3000".
+To start application can be with the help "make start".
