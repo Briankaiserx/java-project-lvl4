@@ -1,6 +1,5 @@
 package hexlet.code.controllers;
 
-import hexlet.code.App;
 import hexlet.code.domain.Url;
 import hexlet.code.domain.UrlCheck;
 import io.ebean.PagedList;
@@ -21,7 +20,7 @@ import kong.unirest.Unirest;
 import kong.unirest.UnirestException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+
 
 
 public class UrlController {
