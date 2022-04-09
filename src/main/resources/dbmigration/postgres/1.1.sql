@@ -18,6 +18,6 @@ create table url_check (
                            constraint pk_url_check primary key (id)
 );
 
-create index ix_url_check_urls_id on url_check (urls_id);
+create index ix_url_check_urls_id on url_check (urls_id); 
 alter table url_check add constraint fk_url_check_urls_id foreign key (urls_id) references urls (id) on delete restrict on update restrict;
 
