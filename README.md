@@ -9,6 +9,11 @@ https://hexlet-exercice-java4.herokuapp.com/
 #### About aplication
 
 ####
-To clone application ".git clone".
-Local host "3000".
-To start application can be with the help "make start".
+####To clone application 
+git clone git@github.com:Briankaiserx/java-project-lvl4.git page-analyzer
+####
+####Localhost 
+"3000".
+####
+####To start 
+"Make start".
