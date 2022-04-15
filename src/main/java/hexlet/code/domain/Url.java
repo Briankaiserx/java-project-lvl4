@@ -48,6 +48,9 @@ public final class Url extends Model {
     public List<UrlCheck> getUrlChecks() {
         return urlChecks;
     }
-
+    public Instant lastDate() {
+        final UrlCheck urlCheck = urlChecks.get(urlChecks.size() - 1);
+        return urlCheck.getCreatedAt();
+    }
 }
 
