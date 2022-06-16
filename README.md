@@ -11,7 +11,7 @@ https://hexlet-exercice-java4.herokuapp.com/
 ####
 #### To clone application 
 ####
-git clone git@github.com:Briankaiserx/java-project-lvl4.git page-analyzer
+git clone git@github.com:MarkReinhardtx/java-project-lvl4.git page-analyzer 
 ####
 #### Localhost
 #### 
